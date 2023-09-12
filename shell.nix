@@ -12,6 +12,7 @@ mkShell {
     toolchain
     pkg-config
     rust-analyzer-unwrapped
+    dbus
   ];
 
   RUST_SRC_PATH = "${toolchain}/lib/rustlib/src/rust/library";
