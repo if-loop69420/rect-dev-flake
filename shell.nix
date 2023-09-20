@@ -5,9 +5,6 @@ mkShell {
   nativeBuildInputs = [
     
   ];
-  shellHook = '' 
-  
-  '';
   packages = [
     toolchain
     pkg-config
@@ -22,4 +19,8 @@ mkShell {
   ];
 
   RUST_SRC_PATH = "${toolchain}/lib/rustlib/src/rust/library";
+
+  shellHook = ''
+    alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes"
+  '';
 }
