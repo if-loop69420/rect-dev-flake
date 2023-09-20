@@ -16,5 +16,6 @@
     toolchain = pkgs.rust-bin.fromRustupToolchainFile ./toolchain.toml;
   in {
     devShells.${system}.default = pkgs.callPackage ./shell.nix { inherit pkgs; toolchain = toolchain; };
+    packages.${system}."thesis" = pkgs.callPackage ./doc_build.nix { inherit pkgs; }; 
   };
 }
