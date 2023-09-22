@@ -20,6 +20,7 @@ mkShell {
     protobuf
     protobufc
     cmake
+    openssl
   ];
 
   RUST_SRC_PATH = "${toolchain}/lib/rustlib/src/rust/library";
