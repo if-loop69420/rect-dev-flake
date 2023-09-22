@@ -3,6 +3,7 @@ with pkgs;
 mkShell {
   buildInputs = [ ];
   nativeBuildInputs = [
+    cmake
     
   ];
   packages = [
@@ -16,10 +17,10 @@ mkShell {
     doxygen
     grpc
     grpc-tools
+    cmake
   ];
 
   RUST_SRC_PATH = "${toolchain}/lib/rustlib/src/rust/library";
-  Catch2_DIR = "${pkgs.catch2_3}"
 
   shellHook = ''
     alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes"
