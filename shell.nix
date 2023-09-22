@@ -17,6 +17,8 @@ mkShell {
     doxygen
     grpc
     grpc-tools
+    protobuf
+    protobufc
     cmake
   ];
 
