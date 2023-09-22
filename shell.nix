@@ -17,6 +17,7 @@ mkShell {
     doxygen
     grpc
     protobuf
+    protobufc
     cmake
     openssl
   ];
