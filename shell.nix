@@ -16,7 +16,6 @@ mkShell {
     python311Packages.pytest
     doxygen
     grpc
-    grpc-tools
     protobuf
     cmake
     openssl
