@@ -18,7 +18,6 @@ mkShell {
     grpc
     grpc-tools
     protobuf
-    protobufc
     cmake
     openssl
   ];
