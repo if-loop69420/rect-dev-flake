@@ -8,13 +8,20 @@
 
   outputs = {self, nixpkgs, rust-overlay,}:
   let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [rust-overlay.overlays.default];
-    };
-    toolchain = pkgs.rust-bin.fromRustupToolchainFile ./toolchain.toml;
+    forAllSystems = function:
+      nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        "aarch64-linux"
+      ] (system: function (import nixpkgs {
+        inherit system;
+        overlays = [rust-overlay.overlays.default];
+      }));
   in {
-    devShells.${system}.default = pkgs.callPackage ./shell.nix { inherit pkgs; toolchain = toolchain; };
+    devShells = forAllSystems (pkgs: 
+    let
+      toolchain = pkgs.rust-bin.fromRustupToolchainFile ./toolchain.toml;
+    in{
+      default = pkgs.callPackage ./shell.nix { inherit pkgs; toolchain = toolchain; };
+    });
   };
 }

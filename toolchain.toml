@@ -2,5 +2,5 @@
 [toolchain]
 channel = "nightly"
 components = [ "rustfmt", "rust-src", "cargo", "rustc"]
-targets = ["x86_64-unknown-linux-gnu", "armv7-unknown-linux-gnueabihf"]
+targets = ["x86_64-unknown-linux-gnu", "armv7-unknown-linux-gnueabihf", "aarch64-unknown-linux-gnu"]
 profile = "minimal"
