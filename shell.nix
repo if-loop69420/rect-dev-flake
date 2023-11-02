@@ -20,6 +20,8 @@ mkShell {
     protobufc
     cmake
     openssl
+    emacs
+    clippy
   ];
 
   RUST_SRC_PATH = "${toolchain}/lib/rustlib/src/rust/library";
